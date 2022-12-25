@@ -1,0 +1,17 @@
+name: aoc2022
+channels:
+  - conda-forge
+dependencies:
+  - black
+  - flake8
+  - flake8-bugbear
+  - flake8-pie
+  - flake8-simplify
+  - isort
+  - mypy
+  - networkx
+  - numpy
+  - python=3.10
+  - pyupgrade
+  - pip:
+    - flake8-typing-imports

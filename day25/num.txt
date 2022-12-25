@@ -1,0 +1,22 @@
+19th place: 2
+18th place: -1
+17th place: -1
+16th place: -1
+15th place: -1
+14th place: 0
+13th place: -2
+12th place: -1
+11th place: -1
+10th place: 1
+9th place: 1
+8th place: 2
+7th place: 2
+6th place: -2
+5th place: 0
+4th place: -2
+3th place: 0
+2th place: 0
+1th place: 2
+0th place: 1
+
+2----0=--1122=0=0021

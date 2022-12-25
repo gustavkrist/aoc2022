@@ -1,0 +1,55 @@
+from __future__ import annotations
+
+import argparse
+import os.path
+
+import pytest
+
+import support
+
+INPUT_TXT = os.path.join(os.path.dirname(__file__), "input.txt")
+SAMPLES = os.path.join(os.path.dirname(__file__), "samples")
+
+
+def compute(s: str) -> int:
+    cycle = 1
+    x = 1
+    total = 0
+    for instruction in s.splitlines():
+        if (cycle - 20) % 40 == 0:
+            total += cycle * x
+            print(total)
+        if len(instruction.split()) > 1:
+            amount = int(instruction.split()[1])
+            cycle += 1
+            if (cycle - 20) % 40 == 0:
+                total += cycle * x
+                print(total)
+            x += amount
+            cycle += 1
+        else:
+            cycle += 1
+    return total
+
+
+@pytest.mark.parametrize(
+    ("input_s", "expected"),
+    support.read_samples(SAMPLES, int, 1),
+)
+def test(input_s: str, expected: int) -> None:
+    assert compute(input_s) == expected
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("data_file", nargs="?", default=INPUT_TXT)
+    args = parser.parse_args()
+
+    with open(args.data_file) as f, support.timing():
+        print(compute(f.read()))
+
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

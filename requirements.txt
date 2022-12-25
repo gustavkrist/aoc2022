@@ -1,0 +1,5 @@
+-e support
+beautifulsoup4
+pandoc
+pytest
+rich
